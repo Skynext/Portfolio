@@ -6,7 +6,7 @@
 }
 html {
   font-size: 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Cutive Mono', monospace;
   color: rgb(20, 76, 160);
 }
 body {
@@ -41,7 +41,7 @@ section p {
   margin-bottom: 10rem;
 }
 .section-heading h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Cutive Mono', monospace;
   font-size: 3.5rem;
   color: #558668;
   text-transform: uppercase;
@@ -68,7 +68,7 @@ section p {
 }
 .section-heading h6 {
   margin-top: 1.5rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
   color: rgb(20, 76, 160);
 }
@@ -176,13 +176,13 @@ header {
 .landing-text h1 {
   font-size: 8rem;
   font-weight: 500;
-  font-family: 'Megrim', cursive;
+  font-family: 'Megrim', monospace;
   color: #558668;
   padding: 1rem;
   user-select: none;
 }
 .landing-text h6 {
-  font-family: "Open Sans", "sans-serif";
+  font-family: 'Cutive Mono', monospace;
   font-size: 3rem;
   font-weight: 200;
   margin-bottom: 2rem;
@@ -201,8 +201,8 @@ header {
   align-items: center;
 }
 .landingbtn p {
-  font-family: "Open Sans", "sans-serif";
-  font-size: 2rem;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.5rem;
   color: white;
 }
 .landingbtn:hover {
@@ -211,8 +211,9 @@ header {
 }
 /* typewriter */
 .txt-type>.txt {
-  font-family: "Open Sans", "sans-serif";
-  border-right: 0.2rem solid #777;
+  font-family: 'Cutive Mono', monospace;
+  border-right: 0.2rem solid #cc4444;
+  color: #cc4444;
 }
 /*End header*/
 
@@ -263,8 +264,8 @@ header {
   color: rgb(20, 76, 160);
 }
 .social-media i {
-  padding: 1rem;
-  font-size: 4rem;
+  padding: 3rem;
+  font-size: 6rem;
   transition: all 250ms;
 }
 .social-media i:hover {
@@ -316,7 +317,7 @@ header {
   transform: rotate(-45deg);
 }
 .skillicons {
-  margin-top: 1rem;
+  margin-top: 6rem;
   font-size: 4rem;
   display: flex;
   flex-flow: row wrap;
@@ -358,7 +359,7 @@ header {
 .portfolio-description p,
 .portfolio-long p {
   text-align: left;
-  margin-top: 3%;
+  margin-top: 4.5%;
   margin-bottom: 3%;
   color: white;
   font-family: 'Cutive Mono', monospace;
@@ -367,7 +368,7 @@ header {
 .portfolio-long {
   display: none;
   order: 3;
-  background-color: #558668;
+  background-color: #989898;
   padding: 2rem;
   margin: 1rem 0 2rem 0;
 }
@@ -425,6 +426,24 @@ header {
 .portfolio-long li{
    padding: 1rem;
  } 
+
+ @media screen and (max-width: 800px){
+.portfolio-long 
+{
+  display: none;
+  order: 3;
+  background-color: #558668;
+  padding: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+.portfolio-description p, .portfolio-long p 
+{
+  margin-top: 65%;
+  color: white;
+  font-family: 'Cutive Mono', monospace;
+  text-align: center;
+}
+}
 /*End services*/
 /* Start gallery */
 .thumb {
