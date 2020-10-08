@@ -72,6 +72,20 @@ section p {
   font-weight: 300;
   color: rgb(20, 76, 160);
 }
+@media screen and (min-width: 800px) {
+  .section-heading h1 
+  {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 3.5rem;
+    color: #558668;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    margin-top: 10%;
+  }
+}
 /*Start header*/
 header {
   width: 100%;
@@ -264,7 +278,7 @@ header {
   color: rgb(20, 76, 160);
 }
 .social-media i {
-  padding: 3rem;
+  padding: 1rem;
   font-size: 6rem;
   transition: all 250ms;
 }
@@ -438,7 +452,7 @@ header {
 }
 .portfolio-description p, .portfolio-long p 
 {
-  margin-top: 65%;
+  margin-top: 5%;
   color: white;
   font-family: 'Cutive Mono', monospace;
   text-align: center;
@@ -895,7 +909,7 @@ border-radius: 10px;
     font-size: 6rem;
   }
   .about-details i {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .about-details li {
     margin: 0 1rem;
@@ -903,6 +917,7 @@ border-radius: 10px;
   .icon-container {
     width: 7rem;
     height: 7rem;
+    margin-top: 17%;
   }
   .icon-container i {
     font-size: 3rem;
