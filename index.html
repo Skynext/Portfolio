@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Portfolio Benjamin Colle Développeur Web Freelance">
+    <meta name="keywords" content="Benjamin Colle Web Développeur Freelance Intégrateur Design">
     <title>Benjamin Colle Portfolio</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- dev icons -->
@@ -20,10 +22,21 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="app.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180200932-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180200932-1');
+</script>
+
 </head>
 
-<body>
+<body id="particles-js">
     <!--id="particles-js-->
+    <div id="particles-js">
         <header>
             <nav class="navbar">
                 <span class="navbar-toggle" id="js-navbar-toggle">
@@ -59,7 +72,7 @@
                     <span class="txt-type" data-wait=1000ms data-words='["Intégrateur", "Designer"]'></span>
                     Web Front End
                 </h6>
-                <a class="landingbtn" href="#portfolio">
+                <a class="landingbtn" href="#about">
                     <p> Voici mon travail ! </p>
                 </a>
             </div>
@@ -155,7 +168,7 @@
             <div class="container">
                 <div class="section-heading">
                     <h1>Portfolio</h1>
-                    <h6>Met Projets</h6>
+                    <h6>Mes Projets</h6>
                 </div>
                 <!-- port1 -->
                 <div class="portfolio-item">
@@ -173,7 +186,7 @@
                         </a>
                     </div>
                     <div class="portfolio-img" data-aos="fade-in" data-aos-delay="100">
-                        <img src="images/screen1.png" alt="Page d'acceuil site vitrine">
+                        <a href="https://skynext.github.io/Projet/"><img src="images/screen1.png" alt="Page d'acceuil site vitrine"></a>
                     </div>
                     <div class="portfolio-long">
                         <img class="extrapic" src="images/screenbis1.png" alt="Page d'acceuil site vitrine">
@@ -185,7 +198,7 @@
                 <!-- port2 -->
                 <div class="portfolio-item">
                     <div class="portfolio-img" data-aos="fade-in" data-aos-delay="100">
-                        <img src="images/screen2.png" alt="Page d'acceuil Carte Intéractive">
+                        <a href="https://skynext.github.io/BeyondTheWorld/"><img src="images/screen2.png" alt="Page d'acceuil Carte Intéractive"></a>
                     </div>
                     <div class="portfolio-description" data-aos="fade-in" data-aos-delay="300">
                         <h1>Projet Carte Intéractive</h1>
@@ -227,7 +240,7 @@
                         </a>
                     </div>
                     <div class="portfolio-img" data-aos="fade-in" data-aos-delay="100">
-                        <img src="images/screen3.png" alt="Page d'acceuil site d'art Photographique">
+                        <a href="https://skynext.github.io/DiscoveryBlackandWhite/"><img src="images/screen3.png" alt="Page d'acceuil site d'art Photographique"></a>
                     </div>
                     <div class="portfolio-long">
                         <img class="extrapic" src="images/screenbis3.png" alt="Page site Photographique">
@@ -318,89 +331,89 @@
             </div>
         </section>
         <!--Section Formulaire-->
-    <!--<?php
-    // S'il y des données de postées
-    if ($_SERVER['REQUEST_METHOD']=='POST') {
-      // Code PHP pour traiter l'envoi de l'email
-      
-      $nombreErreur = 0; // Variable qui compte le nombre d'erreur
-      
-      // Définit toutes les erreurs possibles
-      if (!isset($_POST['email'])) { // Si la variable "email" du formulaire n'existe pas (il y a un problème)
+    <?php
+// S'il y des données de postées
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+  // Code PHP pour traiter l'envoi de l'email
+  
+  $nombreErreur = 0; // Variable qui compte le nombre d'erreur
+  
+  // Définit toutes les erreurs possibles
+  if (!isset($_POST['email'])) { // Si la variable "email" du formulaire n'existe pas (il y a un problème)
+    $nombreErreur++; // On incrémente la variable qui compte les erreurs
+    $erreur1 = '<p>Il y a un problème avec la variable "email".</p>';
+  } else { // Sinon, cela signifie que la variable existe (c'est normal)
+    if (empty($_POST['email'])) { // Si la variable est vide
+      $nombreErreur++; // On incrémente la variable qui compte les erreurs
+      $erreur2 = '<p>Vous avez oublié de donner votre email.</p>';
+    } else {
+      if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $nombreErreur++; // On incrémente la variable qui compte les erreurs
-        $erreur1 = '<p>Il y a un problème avec la variable "email".</p>';
-      } else { // Sinon, cela signifie que la variable existe (c'est normal)
-        if (empty($_POST['email'])) { // Si la variable est vide
-          $nombreErreur++; // On incrémente la variable qui compte les erreurs
-          $erreur2 = '<p>Vous avez oublié de donner votre email.</p>';
-        } else {
-          if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $nombreErreur++; // On incrémente la variable qui compte les erreurs
-            $erreur3 = '<p>Cet email ne ressemble pas un email.</p>';
-          }
-        }
-      }
-      
-      if (!isset($_POST['message'])) {
-        $nombreErreur++;
-        $erreur4 = '<p>Il y a un problème avec la variable "message".</p>';
-      } else {
-        if (empty($_POST['message'])) {
-          $nombreErreur++;
-          $erreur5 = '<p>Vous avez oublié de donner un message.</p>';
-        }
-      }
-      
-      if (!isset($_POST['captcha'])) {
-        $nombreErreur++;
-        $erreur6 = '<p>Il y a un problème avec la variable "captcha".</p>';
-      } else {
-        if ($_POST['captcha']!=4) {
-          $nombreErreur++;
-          $erreur7 = '<p>Désolé, le captcha anti-spam est erroné.</p>';
-        }
-      }
-      
-      if ($nombreErreur==0) { // S'il n'y a pas d'erreur
-        // Récupération des variables et sécurisation des données
-        $nom = htmlentities($_POST['nom']); // htmlentities() convertit des caractères "spéciaux" en équivalent HTML
-        $email = htmlentities($_POST['email']);
-        $message = htmlentities($_POST['message']);
-        $user_sujet = htmlentities($_POST['user_sujet']);
-        
-        // Variables concernant l'email
-        $destinataire = 'morpheuscryptto@gmail.com'; // Adresse email du webmaster
-        $sujet = 'Titre du message'; // Titre de l'email
-        $contenu = '<html><head><title>Titre du message</title></head><body>';
-        $contenu .= '<p>Bonjour, vous avez reçu un message à partir de votre site web.</p>';
-        $contenu .= '<p><strong>Nom</strong>: '.$nom.'</p>';
-        $contenu .= '<p><strong>Sujet</strong>: '.$user_sujet.'</p>';
-        $contenu .= '<p><strong>Email</strong>: '.$email.'</p>';
-        $contenu .= '<p><strong>Message</strong>: '.$message.'</p>';
-        $contenu .= '</body></html>'; // Contenu du message de l'email
-        
-        // Pour envoyer un email HTML, l'en-tête Content-type doit être défini
-        $headers = 'MIME-Version: 1.0'."\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-        
-        @mail($destinataire, $sujet, $contenu, $headers); // Fonction principale qui envoi l'email
-        
-        echo '<h2 style="color: rgb(98 173 98);display: flex;justify-content: center;border: 1px solid;width: 300px;margin: 5% auto;
-        border-radius: 5px;">Message Bien Envoyé !</h2>'; // Afficher un message pour indiquer que le message a été envoyé
-      } else { // S'il y a un moins une erreur
-        echo '<div style="border: 1px solid #ff0000;padding: 5px;display: flex;flex-direction: column;text-align: center;margin: 5% auto;width: 350px;border-radius: 10px;">';
-        echo '<p style="color: #ff0000;">Désolé, il y a eu '.$nombreErreur.' erreur(s). Voici le détail des erreurs:</p>';
-        if (isset($erreur1)) echo '<p>'.$erreur1.'</p>';
-        if (isset($erreur2)) echo '<p>'.$erreur2.'</p>';
-        if (isset($erreur3)) echo '<p>'.$erreur3.'</p>';
-        if (isset($erreur4)) echo '<p>'.$erreur4.'</p>';
-        if (isset($erreur5)) echo '<p>'.$erreur5.'</p>';
-        if (isset($erreur6)) echo '<p>'.$erreur6.'</p>';
-        if (isset($erreur7)) echo '<p>'.$erreur7.'</p>';
-        echo '</div>';
+        $erreur3 = '<p>Cet email ne ressemble pas un email.</p>';
       }
     }
-    ?>-->
+  }
+  
+  if (!isset($_POST['message'])) {
+    $nombreErreur++;
+    $erreur4 = '<p>Il y a un problème avec la variable "message".</p>';
+  } else {
+    if (empty($_POST['message'])) {
+      $nombreErreur++;
+      $erreur5 = '<p>Vous avez oublié de donner un message.</p>';
+    }
+  }
+  
+  if (!isset($_POST['captcha'])) {
+    $nombreErreur++;
+    $erreur6 = '<p>Il y a un problème avec la variable "captcha".</p>';
+  } else {
+    if ($_POST['captcha']!=4) {
+      $nombreErreur++;
+      $erreur7 = '<p>Désolé, le captcha anti-spam est erroné.</p>';
+    }
+  }
+  
+  if ($nombreErreur==0) { // S'il n'y a pas d'erreur
+    // Récupération des variables et sécurisation des données
+    $nom = htmlentities($_POST['nom']); // htmlentities() convertit des caractères "spéciaux" en équivalent HTML
+    $email = htmlentities($_POST['email']);
+    $message = htmlentities($_POST['message']);
+    $user_sujet = htmlentities($_POST['user_sujet']);
+    
+    // Variables concernant l'email
+    $destinataire = 'morpheuscryptto@gmail.com'; // Adresse email du webmaster
+    $sujet = 'Titre du message'; // Titre de l'email
+    $contenu = '<html><head><title>Titre du message</title></head><body>';
+    $contenu .= '<p>Bonjour, vous avez reçu un message à partir de votre site web.</p>';
+    $contenu .= '<p><strong>Nom</strong>: '.$nom.'</p>';
+    $contenu .= '<p><strong>Sujet</strong>: '.$user_sujet.'</p>';
+    $contenu .= '<p><strong>Email</strong>: '.$email.'</p>';
+    $contenu .= '<p><strong>Message</strong>: '.$message.'</p>';
+    $contenu .= '</body></html>'; // Contenu du message de l'email
+    
+    // Pour envoyer un email HTML, l'en-tête Content-type doit être défini
+    $headers = 'MIME-Version: 1.0'."\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+    
+    @mail($destinataire, $sujet, $contenu, $headers); // Fonction principale qui envoi l'email
+    
+    echo '<h2 style="color: rgb(98 173 98);display: flex;justify-content: center;border: 1px solid;width: 300px;margin: 5% auto;
+    border-radius: 5px;">Message Bien Envoyé !</h2>'; // Afficher un message pour indiquer que le message a été envoyé
+  } else { // S'il y a un moins une erreur
+    echo '<div style="border: 1px solid #ff0000;padding: 5px;display: flex;flex-direction: column;text-align: center;margin: 5% auto;width: 350px;border-radius: 10px;">';
+    echo '<p style="color: #ff0000;">Désolé, il y a eu '.$nombreErreur.' erreur(s). Voici le détail des erreurs:</p>';
+    if (isset($erreur1)) echo '<p>'.$erreur1.'</p>';
+    if (isset($erreur2)) echo '<p>'.$erreur2.'</p>';
+    if (isset($erreur3)) echo '<p>'.$erreur3.'</p>';
+    if (isset($erreur4)) echo '<p>'.$erreur4.'</p>';
+    if (isset($erreur5)) echo '<p>'.$erreur5.'</p>';
+	if (isset($erreur6)) echo '<p>'.$erreur6.'</p>';
+	if (isset($erreur7)) echo '<p>'.$erreur7.'</p>';
+    echo '</div>';
+  }
+}
+?>
       <div class="contact">
         <form method="post" action="<?php echo strip_tags($_SERVER['REQUEST_URI']); ?>">
         <div class="Nom">
@@ -433,9 +446,9 @@
             </div>
             <div class="reveal-2 footer">
                 <div class="logoreseau">
-                    <a href="https://www.facebook.com/conscience.biennaitre"><div class="reveal-2 logofb"><i class="fab fa-facebook-square"></i></div></a>
-                    <a href="https://www.instagram.com/oliviapenderia/?hl=fr"><div class="reveal-2 logoinsta"><i class="fab fa-instagram"></i></div></a>
-                    <a href="mailto:conscience.biennaitre@gmail.com"><div class="reveal-2 logomail"><i class="far fa-envelope"></i></div></a>
+                    <a href=""><div class="reveal-2 logofb"><i class="fab fa-facebook-square"></i></div></a>
+                    <a href=""><div class="reveal-2 logoinsta"><i class="fab fa-instagram"></i></div></a>
+                    <a href="mailto:benjicolle@gmail.com"><div class="reveal-2 logomail"><i class="far fa-envelope"></i></div></a>
                 </div>
             </div>
             <div class="copyright">
@@ -443,7 +456,7 @@
                 <i class="far fa-copyright"></i>
             </div>
         </footer>
-        
+</div>
         
         
 

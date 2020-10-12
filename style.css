@@ -20,7 +20,7 @@ section {
 }
 a {
   text-decoration: none;
-  color: #eee;
+  color: rgb(0, 0, 0);
 }
 section p {
   font-size: 1.8rem;
@@ -89,15 +89,15 @@ section p {
 /*Start header*/
 header {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 /* navbar */
 .navbar {
   padding-bottom: 10px;
   z-index: 100;
-  background: #558668;
   position: fixed;
   width: 100%; 
+  background-color: #f0eddeb5;
 }
 .main-nav {
   list-style-type: none;
@@ -111,6 +111,7 @@ header {
   font-family: 'Cutive Mono', monospace;
   font-size: 2rem;
   padding: 0.4rem;
+  background-color: #f0edde;
 }
 .main-nav li {
   transition: 0.2 ease-in-out;
@@ -130,8 +131,8 @@ header {
   top: 10px;
   right: 20px;
   cursor: pointer;
-  color: white;
-  font-size: 24px;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
 }
 .active {
   display: block;
@@ -842,12 +843,11 @@ border-radius: 10px;
     margin-top: 4%;
   }
   .up {
-    position: absolute;
     width: 5rem;
     height: 5rem;
     background-color: #eee;
-    top: -2.5rem;
-    right: 2rem;
+    top: -8rem;
+    right: auto;
     border-radius: 10%;
     display: flex;
     animation: pulse 2s infinite;
@@ -868,6 +868,11 @@ border-radius: 10px;
   }
 }
 /*End animations*/
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 /*Start media queries for mobile*/
 @media screen and (max-width: 1120px) {
   .thumb{
